@@ -165,8 +165,11 @@ impl Launcher {
                 .push(
                     Row::new()
                         .spacing(20)
+                        .push(Container::new(
+                            image::liana_brand_grey().width(Length::Fixed(200.0)),
+                        ))
                         .push(
-                            Container::new(image::liana_brand_grey().width(Length::Fixed(200.0)))
+                            Container::new(image::retailer_logo().width(Length::Fixed(200.0)))
                                 .width(Length::Fill),
                         )
                         .push(
