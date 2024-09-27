@@ -23,6 +23,9 @@ use crate::{
 
 pub const HISTORY_EVENT_PAGE_SIZE: u64 = 20;
 
+const RETAILER_BUTTON_TEXT: &str = "PRIORITY SUPPORT";
+const RETAILER_BUTTON_URL: &str = "https://21stcapital.com/priority/";
+
 pub fn home_view<'a>(
     balance: &'a bitcoin::Amount,
     unconfirmed_balance: &'a bitcoin::Amount,
@@ -32,7 +35,20 @@ pub fn home_view<'a>(
     events: &'a [HistoryTransaction],
 ) -> Element<'a, Message> {
     Column::new()
-        .push(h3("Balance"))
+        .push(
+            Row::new().push(h3("Balance").width(Length::Fill)).push(
+                Button::new(
+                    text(RETAILER_BUTTON_TEXT)
+                        .bold()
+                        .vertical_alignment(alignment::Vertical::Center)
+                        .horizontal_alignment(alignment::Horizontal::Center),
+                )
+                .height(Length::Fixed(50.0))
+                .width(Length::Fixed(200.0))
+                .on_press(Message::OpenUrl(RETAILER_BUTTON_URL.to_string()))
+                .style(theme::Button::Retailer),
+            ),
+        )
         .push(
             Column::new()
                 .push(amount_with_size(balance, H1_SIZE))
