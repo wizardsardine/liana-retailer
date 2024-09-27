@@ -8,7 +8,7 @@
 set -ex
 
 VERSION="${VERSION:-"10.0"}"
-LIANA_PREFIX="liana-$VERSION"
+LIANA_PREFIX="liana-$VERSION-21st-capital"
 LINUX_DIR_NAME="$LIANA_PREFIX-x86_64-linux-gnu"
 LINUX_ARCHIVE="$LINUX_DIR_NAME.tar.gz"
 
