@@ -568,7 +568,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     setup_panic_hook();
 
     let mut settings = Settings::with_flags((config, log_level));
-    settings.window.icon = Some(image::liana_app_icon());
+    settings.window.icon = Some(image::retailer_app_icon());
     settings.window.min_size = Some(Size {
         width: 1000.0,
         height: 650.0,
