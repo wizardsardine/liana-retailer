@@ -6,6 +6,7 @@ const LIANA_LOGO_GREY: &[u8] = include_bytes!("../static/logos/LIANA_SYMBOL_Gray
 const LIANA_BRAND_GREY: &[u8] = include_bytes!("../static/logos/LIANA_BRAND_Gray.svg");
 const WIZARDSARDINE_LETTERING: &[u8] = include_bytes!("../static/logos/logo-wizardsardine.svg");
 
+const RETAILER_ICON: &[u8] = include_bytes!("../static/logos/21st-capital-app-icon.png");
 const RETAILER_LOGO: &[u8] = include_bytes!("../static/logos/21ST_CAPITAL_White.svg");
 
 pub fn liana_app_icon() -> icon::Icon {
@@ -20,6 +21,10 @@ pub fn liana_grey_logo() -> Svg {
 pub fn retailer_logo() -> Svg {
     let h = Handle::from_memory(RETAILER_LOGO.to_vec());
     Svg::new(h)
+}
+
+pub fn retailer_app_icon() -> icon::Icon {
+    icon::from_file_data(RETAILER_ICON, None).unwrap()
 }
 
 pub fn liana_brand_grey() -> Svg {
