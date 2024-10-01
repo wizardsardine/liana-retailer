@@ -621,7 +621,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     #[allow(unused_mut)]
     let mut window_settings = iced::window::Settings {
-        icon: Some(image::liana_app_icon()),
+        icon: Some(image::retailer_app_icon()),
         position: iced::window::Position::Default,
         min_size: Some(Size {
             width: 1000.0,
