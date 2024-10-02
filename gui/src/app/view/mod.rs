@@ -137,7 +137,14 @@ pub fn sidebar<'a>(menu: &Menu, cache: &'a Cache) -> Container<'a, Message> {
         Column::new()
             .push(
                 Column::new()
-                    .push(Container::new(retailer_logo()).padding(10))
+                    .push(
+                        Container::new(
+                            retailer_logo()
+                                .height(Length::Fixed(200.0))
+                                .width(Length::Fixed(200.0)),
+                        )
+                        .padding(10),
+                    )
                     .push(home_button)
                     .push(spend_button)
                     .push(receive_button)
