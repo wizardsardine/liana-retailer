@@ -145,8 +145,8 @@ impl Application for GUI {
 
     fn title(&self) -> String {
         match self.state {
-            State::Installer(_) => format!("Liana v{} Installer", VERSION),
-            _ => format!("Liana v{}", VERSION),
+            State::Installer(_) => format!("Smart Vault - Liana v{} Installer", VERSION),
+            _ => format!("Smart Vault - Liana v{}", VERSION),
         }
     }
 
