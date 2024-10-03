@@ -54,6 +54,8 @@ NIX_BUILD_DIR="$(nix path-info .#release)"
     mv "$LINUX_ARCHIVE" "$RELEASE_DIR"
 
     unzip ../contrib/release/debian/package.zip
+    # Use retailer icon
+    cp ../contrib/retailer.png ./package/usr/share/icons/liana-icon.png
     sed -i "s/VERSION_PLACEHOLDER/$VERSION/g" ./package/DEBIAN/control
     cp "$BUILD_DIR/x86_64-unknown-linux-gnu/release/lianad" "$BUILD_DIR/x86_64-unknown-linux-gnu/release/liana-cli" "$BUILD_DIR/x86_64-unknown-linux-gnu/release/liana-gui" ../README.md ./package/usr/bin/
     DIRNAME="$LIANA_PREFIX-1_amd64"
@@ -82,6 +84,8 @@ NIX_BUILD_DIR="$(nix path-info .#release)"
     mv "$LIANA_PREFIX-aarch64-apple-darwin.tar.gz" "$RELEASE_DIR"
 
     unzip ../contrib/release/macos/Liana.app.zip
+    # Use retailer icon
+    cp ../contrib/retailer.icns ./Liana.app/Contents/Resources/Liana.icns
     sed -i "s/VERSION_PLACEHOLDER/$VERSION/g" ./Liana.app/Contents/Info.plist
     cp "$NIX_BUILD_DIR/universal2-apple-darwin/liana-gui" ./Liana.app/Contents/MacOS/Liana
     zip_archive "$LIANA_PREFIX-macos-noncodesigned.zip" Liana.app
