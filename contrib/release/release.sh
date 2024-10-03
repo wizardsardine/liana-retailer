@@ -43,6 +43,8 @@ TARGET_DIR="$BUILD_DIR" ./contrib/reproducible/docker/docker-build.sh
     cp "$LINUX_ARCHIVE" "$RELEASE_DIR"
 
     unzip ../contrib/release/debian/package.zip
+    # Use retailer icon
+    cp ../contrib/retailer.png ./package/usr/share/icons/liana-icon.png
     sed -i "s/VERSION_PLACEHOLDER/$VERSION/g" ./package/DEBIAN/control
     cp "$BUILD_DIR/release/lianad" "$BUILD_DIR/release/liana-cli" "$BUILD_DIR/gui/release/liana-gui" ../README.md ./package/usr/bin/
     DIRNAME="liana_$VERSION-1_amd64"
@@ -70,6 +72,8 @@ TARGET_DIR="$BUILD_DIR" ./contrib/reproducible/docker/docker-build.sh
     cp "$MAC_ARCHIVE" "$RELEASE_DIR"
 
     unzip ../contrib/release/macos/Liana.app.zip
+    # Use retailer icon
+    cp ../contrib/retailer.icns ./Liana.app/Contents/Resources/Liana.icns
     sed -i "s/VERSION_PLACEHOLDER/$VERSION/g" ./Liana.app/Contents/Info.plist
     cp "$BUILD_DIR/gui/x86_64-apple-darwin/release/liana-gui" ./Liana.app/Contents/MacOS/Liana
     zip -ry Liana-noncodesigned.zip Liana.app
