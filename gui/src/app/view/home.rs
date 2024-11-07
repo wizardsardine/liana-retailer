@@ -26,6 +26,9 @@ use crate::{
     daemon::model::{HistoryTransaction, TransactionKind},
 };
 
+const RETAILER_BUTTON_TEXT: &str = "PRIORITY SUPPORT";
+const RETAILER_BUTTON_URL: &str = "https://21stcapital.com/priority/";
+
 #[allow(clippy::too_many_arguments)]
 pub fn home_view<'a>(
     balance: &'a bitcoin::Amount,
@@ -38,7 +41,20 @@ pub fn home_view<'a>(
     sync_status: &SyncStatus,
 ) -> Element<'a, Message> {
     Column::new()
-        .push(h3("Balance"))
+        .push(
+            Row::new().push(h3("Balance").width(Length::Fill)).push(
+                Button::new(
+                    text(RETAILER_BUTTON_TEXT)
+                        .bold()
+                        .vertical_alignment(alignment::Vertical::Center)
+                        .horizontal_alignment(alignment::Horizontal::Center),
+                )
+                .height(Length::Fixed(50.0))
+                .width(Length::Fixed(200.0))
+                .on_press(Message::OpenUrl(RETAILER_BUTTON_URL.to_string()))
+                .style(theme::Button::Retailer),
+            ),
+        )
         .push(
             Column::new()
                 .push(if sync_status.is_synced() {

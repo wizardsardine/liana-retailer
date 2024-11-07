@@ -139,9 +139,9 @@ pub fn sidebar<'a>(menu: &Menu, cache: &'a Cache) -> Container<'a, Message> {
                 Column::new()
                     .push(
                         Container::new(
-                            liana_grey_logo()
-                                .height(Length::Fixed(120.0))
-                                .width(Length::Fixed(60.0)),
+                            retailer_logo()
+                                .height(Length::Fixed(200.0))
+                                .width(Length::Fixed(200.0)),
                         )
                         .padding(10),
                     )

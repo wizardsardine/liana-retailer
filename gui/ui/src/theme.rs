@@ -8,6 +8,20 @@ use iced::{
 
 use super::color;
 
+fn retailer_button_appearance() -> button::Appearance {
+    button::Appearance {
+        shadow_offset: iced::Vector::default(),
+        background: Some(color::RETAILER.into()),
+        text_color: color::BLACK,
+        border: iced::Border {
+            color: color::TRANSPARENT,
+            width: 1.0,
+            radius: 5.0.into(),
+        },
+        ..button::Appearance::default()
+    }
+}
+
 #[derive(Debug, Copy, Clone, Eq, PartialEq, Default)]
 pub enum Theme {
     #[default]
@@ -627,6 +641,7 @@ pub enum Button {
     #[default]
     Primary,
     Secondary,
+    Retailer,
     Destructive,
     SecondaryDestructive,
     Transparent,
@@ -666,6 +681,7 @@ impl button::StyleSheet for Theme {
                         ..button::Appearance::default()
                     }
                 }
+                Button::Retailer => retailer_button_appearance(),
                 Button::Destructive => button::Appearance {
                     shadow_offset: iced::Vector::default(),
                     background: Some(color::GREY_6.into()),
@@ -756,6 +772,7 @@ impl button::StyleSheet for Theme {
                     },
                     ..button::Appearance::default()
                 },
+                Button::Retailer => retailer_button_appearance(),
                 Button::Destructive | Button::SecondaryDestructive => button::Appearance {
                     shadow_offset: iced::Vector::default(),
                     background: Some(color::RED.into()),

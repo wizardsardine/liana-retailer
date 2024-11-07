@@ -19,6 +19,7 @@ pub enum Message {
     SelectHardwareWallet(usize),
     CreateRbf(CreateRbfMessage),
     ShowQrCode(usize),
+    OpenUrl(String),
 }
 
 #[derive(Debug, Clone)]
