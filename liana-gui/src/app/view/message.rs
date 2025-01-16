@@ -20,6 +20,7 @@ pub enum Message {
     CreateRbf(CreateRbfMessage),
     ShowQrCode(usize),
     Export(ExportMessage),
+    OpenUrl(String),
 }
 
 #[derive(Debug, Clone)]

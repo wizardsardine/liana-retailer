@@ -61,3 +61,9 @@ pub const BLUE: Color = Color::from_rgb(
     0xD3 as f32 / 255.0,
     0xFC as f32 / 255.0,
 );
+
+pub const RETAILER: Color = Color::from_rgb(
+    0xDA as f32 / 255.0,
+    0xF7 as f32 / 255.0,
+    0xA6 as f32 / 255.0,
+);
