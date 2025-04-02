@@ -1208,7 +1208,7 @@ fn display_policy<'a>(
                             .iter()
                             .all(|fg| provider_keys.contains_key(fg))
                     {
-                        "(Safety Net path)".to_string()
+                        "(Rescue path)".to_string()
                     } else {
                         format!("(Recovery path #{})", i + 1)
                     },

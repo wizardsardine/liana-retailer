@@ -11,7 +11,7 @@ pub enum KeyKind {
 impl std::fmt::Display for KeyKind {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            KeyKind::SafetyNet => write!(f, "Safety Net"),
+            KeyKind::SafetyNet => write!(f, "Rescue"),
             KeyKind::Cosigner => write!(f, "Cosigner"),
         }
     }
