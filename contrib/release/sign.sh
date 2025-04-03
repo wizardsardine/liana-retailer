@@ -3,8 +3,8 @@
 set -e  # Exit immediately if a command exits with a non-zero status
 set -x  # Print commands and their arguments as they are executed
 
-VERSION="${VERSION:-"10.0rc2"}"
-LIANA_PREFIX="liana-$VERSION"
+VERSION="${VERSION:-"10.0"}"
+LIANA_PREFIX="liana-$VERSION-21st-capital"
 # Define the release directory
 RELEASE_DIR="$PWD/release_assets"
 RELEASE_BUILD_DIR="$PWD/release_build"

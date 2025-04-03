@@ -34,7 +34,7 @@ use liana_gui::{
     },
     loader::{self, Loader},
     logger::Logger,
-    VERSION,
+    RETAILER_VERSION as VERSION,
 };
 
 #[derive(Debug, PartialEq)]
@@ -143,8 +143,8 @@ async fn ctrl_c() -> Result<(), ()> {
 impl GUI {
     fn title(&self) -> String {
         match self.state {
-            State::Installer(_) => format!("Liana v{} Installer", VERSION),
-            _ => format!("Liana v{}", VERSION),
+            State::Installer(_) => format!("Smart Vault - Liana v{} Installer", VERSION),
+            _ => format!("Smart Vault - Liana v{}", VERSION),
         }
     }
 
@@ -621,7 +621,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     #[allow(unused_mut)]
     let mut window_settings = iced::window::Settings {
-        icon: Some(image::liana_app_icon()),
+        icon: Some(image::retailer_app_icon()),
         position: iced::window::Position::Default,
         min_size: Some(Size {
             width: 1000.0,
