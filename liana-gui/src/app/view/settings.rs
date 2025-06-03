@@ -277,7 +277,10 @@ pub fn about_section<'a>(
             .push(
                 Row::new().push(Space::with_width(Length::Fill)).push(
                     Column::new()
-                        .push(text(format!("liana-gui v{}", crate::VERSION)))
+                        .push(text(format!(
+                            "liana-gui Smart Vault - v{}",
+                            crate::RETAILER_VERSION
+                        )))
                         .push_maybe(
                             lianad_version.map(|version| text(format!("lianad v{}", version))),
                         ),
@@ -1224,7 +1227,7 @@ fn display_policy<'a>(
                             .iter()
                             .all(|fg| provider_keys.contains_key(fg))
                     {
-                        "(Safety Net path)".to_string()
+                        "(Rescue path)".to_string()
                     } else {
                         format!("(Recovery path #{})", i + 1)
                     },
