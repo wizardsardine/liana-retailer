@@ -150,6 +150,13 @@ fn button(p: &Button, status: Status) -> Style {
     }
 }
 
+pub fn retailer(theme: &Theme, status: Status) -> Style {
+    let mut b = button(&theme.colors.buttons.retailer, status);
+    b.border.radius = 5.0.into();
+    b.border.width = 1.0;
+    b
+}
+
 pub fn tab(theme: &Theme, status: Status) -> Style {
     let mut style = button(&theme.colors.buttons.tab, status);
     style.border.radius = 0.0.into();

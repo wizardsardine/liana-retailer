@@ -1,5 +1,5 @@
 use super::text::text;
-use crate::font::MEDIUM;
+use crate::font::{BOLD, MEDIUM};
 use crate::{theme, widget::*};
 use iced::alignment::{Horizontal, Vertical};
 use iced::widget::{button, container, row};
@@ -55,6 +55,10 @@ pub fn secondary<'a, T: 'a>(icon: Option<Text<'a>>, t: &'static str) -> Button<'
     Button::new(content(icon, text(t))).style(theme::button::secondary)
 }
 
+pub fn retailer<'a, T: 'a>(t: &'static str) -> Button<'a, T> {
+    button::Button::new(content_retailer(t)).style(theme::button::retailer)
+}
+
 pub fn border<'a, T: 'a>(icon: Option<Text<'a>>, t: &'static str) -> Button<'a, T> {
     Button::new(content(icon, text(t))).style(theme::button::secondary)
 }
@@ -74,4 +78,11 @@ fn content<'a, T: 'a>(icon: Option<Text<'a>>, text: Text<'a>) -> Container<'a, T
             .align_x(Horizontal::Center)
             .padding(5),
     }
+}
+
+fn content_retailer<'a, T: 'a>(t: &'static str) -> Container<'a, T> {
+    container(text(t).font(BOLD))
+        .align_x(Horizontal::Center)
+        .align_y(Vertical::Center)
+        .padding(5)
 }

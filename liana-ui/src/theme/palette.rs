@@ -45,6 +45,7 @@ pub struct Buttons {
     pub container: Button,
     pub container_border: Button,
     pub menu: Button,
+    pub retailer: Button,
     pub tab: Button,
     pub link: Button,
 }
@@ -362,6 +363,28 @@ impl std::default::Default for Palette {
                     disabled: Some(ButtonPalette {
                         background: color::TRANSPARENT,
                         text: color::WHITE,
+                        border: color::TRANSPARENT.into(),
+                    }),
+                },
+                retailer: Button {
+                    active: ButtonPalette {
+                        background: color::RETAILER,
+                        text: color::BLACK,
+                        border: color::TRANSPARENT.into(),
+                    },
+                    hovered: ButtonPalette {
+                        background: color::RETAILER,
+                        text: color::BLACK,
+                        border: color::TRANSPARENT.into(),
+                    },
+                    pressed: Some(ButtonPalette {
+                        background: color::RETAILER,
+                        text: color::BLACK,
+                        border: color::TRANSPARENT.into(),
+                    }),
+                    disabled: Some(ButtonPalette {
+                        background: color::RETAILER,
+                        text: color::BLACK,
                         border: color::TRANSPARENT.into(),
                     }),
                 },

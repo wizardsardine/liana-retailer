@@ -23,7 +23,8 @@ use crate::installer::{
     },
 };
 
-const SAFETY_NET_DESCRIPTION: &str = "This adds a final recovery option containing keys from professional key agents.\n\nUse this option if you have been provided one or more Safety Net tokens.";
+const SAFETY_NET_DESCRIPTION: &str =
+    "Use this option if you have been provided one or more Rescue tokens.";
 
 pub fn custom_template_description(progress: (usize, usize)) -> Element<'static, Message> {
     layout(
@@ -195,7 +196,7 @@ pub fn custom_template<'a>(
                     )
                     .push_maybe(
                         safety_net_path.is_none().then_some(tooltip::Tooltip::new(
-                            button::secondary(Some(icon::plus_icon()), "Add Safety Net")
+                            button::secondary(Some(icon::plus_icon()), "Add Rescue path")
                                 .width(Length::Fixed(210.0))
                                 .on_press(Message::DefineDescriptor(
                                     message::DefineDescriptor::AddSafetyNetPath,
@@ -211,7 +212,7 @@ pub fn custom_template<'a>(
             .push_maybe(safety_net_path.map(|(sn_index, sn_path)| {
                 path(
                     color::WHITE,
-                    Some("Safety Net:".to_string()),
+                    Some("Rescue path:".to_string()),
                     sn_path.sequence,
                     sn_path.warning,
                     sn_path.threshold,
@@ -227,7 +228,7 @@ pub fn custom_template<'a>(
                                 defined_key(
                                     &key.name,
                                     color::WHITE,
-                                    "Safety Net key",
+                                    "Rescue key",
                                     if use_taproot && !key.source.is_compatible_taproot() {
                                         Some("This key source does not support Taproot")
                                     } else {
@@ -238,7 +239,7 @@ pub fn custom_template<'a>(
                             } else {
                                 undefined_key(
                                     color::WHITE,
-                                    "Safety Net key",
+                                    "Rescue key",
                                     !sn_path.keys[0..i].iter().any(|k| k.is_none()),
                                     fixed,
                                 )

@@ -990,7 +990,7 @@ fn display_policy(
                             .iter()
                             .all(|fg| keys.get(fg).is_some_and(|k| k.provider_key.is_some()))
                     {
-                        "(Safety Net path)".to_string()
+                        "(Rescue path)".to_string()
                     } else {
                         format!("(Recovery path #{})", i + 1)
                     },

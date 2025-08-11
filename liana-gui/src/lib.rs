@@ -24,6 +24,19 @@ pub const VERSION: Version = Version {
     minor: 0,
 };
 
+const RETAILER_NAME: &str = "21st Capital";
+
+#[derive(Debug, Clone)]
+pub struct RetailerVersion(Version);
+
+impl std::fmt::Display for RetailerVersion {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "{} - {}", self.0, RETAILER_NAME)
+    }
+}
+
+pub const RETAILER_VERSION: RetailerVersion = RetailerVersion(VERSION);
+
 #[cfg(test)]
 mod tests {
     #[test]

@@ -123,7 +123,7 @@ pub fn path(
                             button::secondary(
                                 Some(icon::plus_icon()),
                                 if sequence.path_kind() == PathKind::SafetyNet {
-                                    "Add Safety Net key"
+                                    "Add Rescue key"
                                 } else {
                                     "Add key"
                                 },

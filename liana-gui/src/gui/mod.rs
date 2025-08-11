@@ -21,7 +21,7 @@ use crate::{
     dir::LianaDirectory,
     launcher,
     logger::setup_logger,
-    VERSION,
+    RETAILER_VERSION as VERSION,
 };
 
 use iced::window::Id;
@@ -71,7 +71,7 @@ async fn ctrl_c() -> Result<(), ()> {
 
 impl GUI {
     pub fn title(&self) -> String {
-        format!("Liana v{}", VERSION)
+        format!("Smart Vault - Liana v{}", VERSION)
     }
 
     pub fn new((config, log_level): (Config, Option<LevelFilter>)) -> (GUI, Task<Message>) {
